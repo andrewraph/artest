@@ -123,38 +123,7 @@ body {
   opacity: 0.5;
 }
 
-/* -------------------------
-   ELSEWHERE EXPAND
-------------------------- */
 
-.elsewhere-content {
-  padding-top: 17px;
-
-  visibility: hidden;
-  height: 0;
-  overflow: hidden;
-}
-
-.elsewhere-content.open {
-  visibility: visible;
-  height: auto;
-}
-
-.elsewhere-content p {
-  font-size: var(--text-body);
-  line-height: 1.45;
-}
-
-/* desktop breathing room */
-@media (min-width: 901px) {
-  .intro {
-    padding-bottom: 120px;
-  }
-}
-
-.links {
-  display: none;
-}
 
 /* -------------------------
    GALLERY (DESKTOP HORIZONTAL)
@@ -362,23 +331,36 @@ body {
 }
 
 /* -------------------------
-   APPOINTMENT TOGGLE
+   CONTENT SWITCHING
 ------------------------- */
 
-.intro-content {
-  display: block;
+.page-content {
+
+    display:none;
+
+    opacity:0;
+
 }
 
-.appointment-content {
-  display: none;
+.page-content.active {
+
+    display:block;
+
+    animation:sectionFade .25s ease forwards;
+
 }
 
-body.booking .intro-content {
-  display: none;
-}
 
-body.booking .appointment-content {
-  display: block;
+@keyframes sectionFade {
+
+    from {
+        opacity:0;
+    }
+
+    to {
+        opacity:1;
+    }
+
 }
 
 /* -------------------------
