@@ -564,6 +564,10 @@ body {
 
 }
 
-.appointment-form select {
-    color: rgba(255,255,255,0.5);
+.appointment-form select:invalid {
+    opacity:0.5;
+}
+
+.appointment-form select:valid {
+    opacity:1;
 }
