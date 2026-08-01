@@ -395,17 +395,16 @@ body.booking .appointment-content {
   text-decoration: underline;
 }
 
-/* desktop */
-
+/* DESKTOP */
 @media (min-width:901px){
 
   .intro-links{
 
     position:fixed;
 
-    top:35px;
+    top:calc(var(--edge) + 5px);
 
-    right:30px;
+    right:var(--edge);
 
     text-align:right;
 
@@ -415,17 +414,44 @@ body.booking .appointment-content {
 
 }
 
-/* mobile */
-
+/* MOBILE */
 @media (max-width:900px){
 
   .intro-links{
+
+    position:static;
 
     margin-top:28px;
 
   }
 
 }
+
+.intro-content,
+.appointment-content{
+
+    width:100%;
+
+}
+
+.appointment-form{
+
+    margin-top:0;
+
+}
+
+@media (max-width:900px){
+
+    .intro-content,
+    .appointment-content{
+
+        padding:0;
+
+    }
+
+}
+
+
 
 /* -------------------------
    FORM
