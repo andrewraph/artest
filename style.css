@@ -563,3 +563,7 @@ body {
     appearance:none;
 
 }
+
+.appointment-form select {
+    color: rgba(255,255,255,0.5);
+}
