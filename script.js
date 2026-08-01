@@ -140,35 +140,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -------------------------
-   BOOK APPOINTMENT
+   BOOK / ABOUT
 ------------------------- */
 
-const appointmentToggle = document.querySelector('.appointment-toggle');
+const bookToggle = document.querySelector('.book-toggle');
+const aboutToggle = document.querySelector('.about-toggle');
 
-const introContent = document.querySelector('.intro-content');
+if (bookToggle && aboutToggle) {
 
-const appointmentContent = document.querySelector('.appointment-content');
+    bookToggle.addEventListener('click', function (e) {
 
-appointmentToggle.addEventListener('click', function(e){
+        e.preventDefault();
 
-    e.preventDefault();
+        document.body.classList.add('booking');
 
-    document.body.classList.toggle('booking');
+    });
 
-    if(document.body.classList.contains('booking')){
+    aboutToggle.addEventListener('click', function (e) {
 
-        if(window.innerWidth > 900){
-            appointmentToggle.textContent = 'About';
-        }else{
-            appointmentToggle.textContent = 'Home';
-        }
+        e.preventDefault();
 
-    }else{
+        document.body.classList.remove('booking');
 
-        appointmentToggle.textContent = 'Book Appointment';
+    });
 
-    }
-
-});
+}
 
 });
