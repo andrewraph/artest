@@ -140,30 +140,56 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -------------------------
-   BOOK / ABOUT
+   CONTENT SWITCHING
 ------------------------- */
 
-const bookToggle = document.querySelector('.book-toggle');
+const sections = document.querySelectorAll('.page-content');
+
+const appointmentsToggle = document.querySelector('.appointments-toggle');
 const aboutToggle = document.querySelector('.about-toggle');
+const elsewhereToggle = document.querySelector('.elsewhere-toggle');
 
-if (bookToggle && aboutToggle) {
 
-    bookToggle.addEventListener('click', function (e) {
+function showSection(section){
 
-        e.preventDefault();
-
-        document.body.classList.add('booking');
-
+    sections.forEach(item=>{
+        item.classList.remove('active');
     });
 
-    aboutToggle.addEventListener('click', function (e) {
-
-        e.preventDefault();
-
-        document.body.classList.remove('booking');
-
-    });
+    section.classList.add('active');
 
 }
 
+
+appointmentsToggle.addEventListener('click', e=>{
+
+    e.preventDefault();
+
+    showSection(
+        document.querySelector('.appointment-content')
+    );
+
+});
+
+
+aboutToggle.addEventListener('click', e=>{
+
+    e.preventDefault();
+
+    showSection(
+        document.querySelector('.about-content')
+    );
+
+});
+
+
+elsewhereToggle.addEventListener('click', e=>{
+
+    e.preventDefault();
+
+    showSection(
+        document.querySelector('.elsewhere-page')
+    );
+
+});
 });
