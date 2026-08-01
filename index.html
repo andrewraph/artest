@@ -38,21 +38,26 @@
 
     <div class="page-content appointment-content">
 
-      <form class="appointment-form">
+      <form 
+  class="appointment-form"
+  action="https://formspree.io/f/YOUR_FORM_ID"
+  method="POST">
 
-        <input type="text" name="first_name" placeholder="First Name" required>
+  <input type="hidden" name="_subject" value="New Appointment Request — Andrew Raphael">
 
-        <input type="text" name="last_name" placeholder="Last Name" required>
+  <input type="text" name="first_name" placeholder="First Name" required>
 
-        <input type="email" name="email" placeholder="Email" required>
+  <input type="text" name="last_name" placeholder="Last Name" required>
 
-        <input type="text" name="subject" placeholder="Subject">
+  <input type="email" name="email" placeholder="Email" required>
 
-        <textarea name="message" placeholder="Message" required></textarea>
+  <input type="text" name="subject" placeholder="Subject">
 
-        <button type="submit">SUBMIT</button>
+  <textarea name="message" placeholder="Message" required></textarea>
 
-      </form>
+  <button type="submit">SUBMIT</button>
+
+</form>
 
     </div>
 
