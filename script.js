@@ -120,24 +120,6 @@ document.addEventListener('DOMContentLoaded', () => {
   mq.addEventListener('change', handleModeChange);
 
 
-  /* -------------------------
-     ELSEWHERE TOGGLE
-  ------------------------- */
-
-  const elsewhereToggle = document.querySelector('.elsewhere-toggle');
-  const elsewhereContent = document.querySelector('.elsewhere-content');
-
-  if (elsewhereToggle && elsewhereContent) {
-
-    elsewhereToggle.addEventListener('click', (e) => {
-
-      e.preventDefault();
-
-      elsewhereContent.classList.toggle('open');
-
-    });
-
-  }
 
   /* -------------------------
    CONTENT SWITCHING
@@ -152,7 +134,9 @@ const elsewhereToggle = document.querySelector('.elsewhere-toggle');
 
 function showSection(section){
 
-    sections.forEach(item=>{
+    if (!section) return;
+
+    sections.forEach(item => {
         item.classList.remove('active');
     });
 
@@ -161,35 +145,46 @@ function showSection(section){
 }
 
 
-appointmentsToggle.addEventListener('click', e=>{
+if (appointmentsToggle) {
 
-    e.preventDefault();
+    appointmentsToggle.addEventListener('click', e => {
 
-    showSection(
-        document.querySelector('.appointment-content')
-    );
+        e.preventDefault();
 
-});
+        showSection(
+            document.querySelector('.appointment-content')
+        );
 
+    });
 
-aboutToggle.addEventListener('click', e=>{
-
-    e.preventDefault();
-
-    showSection(
-        document.querySelector('.about-content')
-    );
-
-});
+}
 
 
-elsewhereToggle.addEventListener('click', e=>{
+if (aboutToggle) {
 
-    e.preventDefault();
+    aboutToggle.addEventListener('click', e => {
 
-    showSection(
-        document.querySelector('.elsewhere-page')
-    );
+        e.preventDefault();
 
-});
-});
+        showSection(
+            document.querySelector('.about-content')
+        );
+
+    });
+
+}
+
+
+if (elsewhereToggle) {
+
+    elsewhereToggle.addEventListener('click', e => {
+
+        e.preventDefault();
+
+        showSection(
+            document.querySelector('.elsewhere-page')
+        );
+
+    });
+
+}
