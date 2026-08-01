@@ -139,4 +139,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
+  /* -------------------------
+   BOOK APPOINTMENT
+------------------------- */
+
+const appointmentToggle = document.querySelector('.appointment-toggle');
+
+const introContent = document.querySelector('.intro-content');
+
+const appointmentContent = document.querySelector('.appointment-content');
+
+appointmentToggle.addEventListener('click', function(e){
+
+    e.preventDefault();
+
+    document.body.classList.toggle('booking');
+
+    if(document.body.classList.contains('booking')){
+
+        if(window.innerWidth > 900){
+            appointmentToggle.textContent = 'About';
+        }else{
+            appointmentToggle.textContent = 'Home';
+        }
+
+    }else{
+
+        appointmentToggle.textContent = 'Book Appointment';
+
+    }
+
+});
+
 });
