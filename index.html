@@ -53,7 +53,12 @@
 
   <input type="email" name="email" placeholder="Email" required>
 
-  <input type="text" name="subject" placeholder="Subject">
+  <select name="subject" required>
+  <option value="" disabled selected>Subject</option>
+  <option value="New Appointment">New Appointment</option>
+  <option value="General Inquiry">Bespoke Suiting</option>
+  <option value="Partnership/Collaborations">Alterations</option>
+</select>
 
   <textarea name="message" placeholder="Message" required></textarea>
 
