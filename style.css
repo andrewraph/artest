@@ -317,11 +317,14 @@ body {
   }
 }
 
-.intro > .intro-inner,
-.footer {
+.intro > .intro-inner {
   opacity:0;
   animation:textFade .6s ease forwards;
   animation-delay:.8s;
+}
+
+.footer {
+  opacity:1;
 }
 
 @keyframes textFade {
